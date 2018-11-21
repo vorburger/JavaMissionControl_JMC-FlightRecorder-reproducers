@@ -2,19 +2,19 @@
 
 Running `./make.sh` produces a `recording.jfr`.
 
+This uses a custom `default-with-all-exceptions.jfc`; those can be created by importing 
+an e.g. `jdk1.8.0_92-ORACLE/jre/lib/jfr/default.jfc` into the JMC UI (Window > Flight Record Template Manager),
+then edited.  NB must re-Export File after change.
+
 
 ## Exceptions
 
 Opening `recording.jfr` only contains the `Error` thrown in the `Main` class, never the `IOException`.
 
-In `default-with-all-exceptions.jfc` the `exception-level` has been changed from the 
-default `errors` (from a jdk1.8.0_92-ORACLE/jre/lib/jfr/default.jfc) to `all`. 
-What is missing? 
+In the custom JFC used, the `exception-level` has been changed from the  default `errors` to `all`.
 
-Couldn't be a real bug... if `all` just did not work, then why would there be an option for it?! ;-)
-
-Something must be wrong in the JFC, but it's edited with the JMC UI (Window > Flight Record Template Manager; NB must re-Export File after change!)
-to enable the only option that seemed relevant to this, and don't see other options related to this (even though its format seems weird).
+_**This custom JFC actually works in a "real" app; there just appears to be some .. optimization (?)
+which make it not work in a trivialized short lived test example like this.**_
 
 
 ## References
