@@ -20,4 +20,5 @@ to enable the only option that seemed relevant to this, and don't see other opti
 ## References
 
 * https://wiki.opendaylight.org/view/HowToProfilePerformance
+* https://stackoverflow.com/questions/44073273/how-to-profile-thown-exception-in-java-mission-control
 * https://bugzilla.redhat.com/show_bug.cgi?id=1651668
